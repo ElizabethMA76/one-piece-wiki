@@ -1,0 +1,17 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #b4d8f6; 
+  color: rgb(248, 249, 249); /*subtitle*/
+}
+
+.app {
+  min-height: 100vh;
+  text-align: center;
+  padding-top: 80px;
+}
+set
+h1 {
+  font-size: 48px;
+  color: #781717;
+}
