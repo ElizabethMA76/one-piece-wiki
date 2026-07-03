@@ -1,0 +1,92 @@
+[
+  {
+    "id": 1,
+    "name": "Monkey D. Luffy",
+    "crew": "Straw Hat Pirates",
+    "role": "Captain",
+    "devilFruit": "Hito Hito no Mi, Model: Nika",
+    "bounty": "3,000,000,000",
+    "image": "https://placehold.co/300x400?text=Luffy"
+  },
+  {
+    "id": 2,
+    "name": "Roronoa Zoro",
+    "crew": "Straw Hat Pirates",
+    "role": "Swordsman",
+    "devilFruit": "None",
+    "bounty": "1,111,000,000",
+    "image": "https://placehold.co/300x400?text=Zoro"
+  },
+  {
+    "id": 3,
+    "name": "Nami",
+    "crew": "Straw Hat Pirates",
+    "role": "Navigator",
+    "devilFruit": "None",
+    "bounty": "366,000,000",
+    "image": "https://placehold.co/300x400?text=Nami"
+  },
+  {
+    "id": 4,
+    "name": "Usopp",
+    "crew": "Straw Hat Pirates",
+    "role": "Sniper",
+    "devilFruit": "None",
+    "bounty": "500,000,000",
+    "image": "https://placehold.co/300x400?text=Ussop"
+  },
+  {
+    "id": 5,
+    "name": "Sanji",
+    "crew": "Straw Hat Pirates",
+    "role": "Cook",
+    "devilFruit": "None",
+    "bounty": "1,032,000,000",
+    "image": "https://placehold.co/300x400?text=Sanji"
+  },
+  {
+    "id": 6,
+    "name": "Tony Tony Chopper",
+    "crew": "Straw Hat Pirates",
+    "role": "Doctor",
+    "devilFruit": "Hito Hito no Mi",
+    "bounty": "1,000",
+    "image": "https://placehold.co/300x400?text=Chopper"
+  },
+  {
+    "id": 7,
+    "name": "Nico Robin",
+    "crew": "Straw Hat Pirates",
+    "role": "Archaeologist",
+    "devilFruit": "Hana Hana no Mi",
+    "bounty": "930,000,000",
+    "image": "https://placehold.co/300x400?text=Nico"
+  },
+  {
+    "id": 8,
+    "name": "Franky",
+    "crew": "Straw Hat Pirates",
+    "role": "Shipwright",
+    "devilFruit": "None",
+    "bounty": "394,000,000",
+    "image": "https://placehold.co/300x400?text=Franky"
+  },
+  {
+    "id": 9,
+    "name": "Brook",
+    "crew": "Straw Hat Pirates",
+    "role": "Musician",
+    "devilFruit": "Yomi Yomi no Mi",
+    "bounty": "383,000,000",
+    "image": "https://placehold.co/300x400?text=Brook"
+  },
+  {
+    "id": 10,
+    "name": "Jinbe",
+    "crew": "Straw Hat Pirates",
+    "role": "Helmsman",
+    "devilFruit": "None",
+    "bounty": "1,100,000,000",
+    "image": "https://placehold.co/300x400?text=Jinbe"
+  }
+]

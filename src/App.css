@@ -1,17 +1,125 @@
-body {
-  margin: 0;
-  font-family: Arial, sans-serif;
-  background: #b4d8f6; 
-  color: rgb(248, 249, 249); /*subtitle*/
+html {
+  scroll-behavior: smooth;
 }
 
-.app {
-  min-height: 100vh;
-  text-align: center;
-  padding-top: 80px;
+.menu {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+
+  padding: 12px;
+  background: white;
 }
-set
-h1 {
-  font-size: 48px;
+
+.menu a {
+  text-decoration: none;
+  background: #781717;
+  color: white;
+  padding: 12px 20px;
+  border-radius: 999px;
+  font-weight: bold;
+}
+
+.menu a:hover {
+  background: #ffd166;
   color: #781717;
+  transform: translateY(-3px);
+}
+
+.section {
+  min-height: 100vh;
+  padding: 80px;
+  font-size: 40px;
+  text-align: center;
+}
+.hero {
+  padding-top: 20px;
+  text-align: center;
+}
+
+
+.cards-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.character-card {
+  background: white;
+  color: #2b2b2b;
+  border-radius: 18px;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.character-card img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  display: block;
+  border-radius: 14px;
+}
+  
+.character-card h3 {
+  color: #781717;
+  font-size: 24px;
+}
+
+.character-card p {
+  font-size: 14px;
+  margin: 8px 0;
+}
+
+.character-card strong {
+  color: #781717;
+}
+
+@media (max-width: 900px) {
+  .cards-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .cards-container {
+    grid-template-columns: 1fr;
+  }
+}
+
+.selected-card {
+  border: 4px solid #d62828;
+  transform: scale(1.05);
+  box-shadow: 0 0 20px rgba(214, 40, 40, 0.5);
+}
+
+.character-card {
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.character-card:hover {
+  transform: translateY(-8px);
+}
+
+.character-card h3 {
+  font-size: 22px;
+  margin: 15px 0;
+  color: #781717;
+}
+
+.character-card p {
+  font-size: 14px;
+  margin: 8px 0;
+  line-height: 1.4;
+}
+
+.character-card strong {
+  font-size: 14px;
 }
