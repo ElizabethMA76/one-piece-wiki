@@ -44,19 +44,25 @@ html {
 
 .cards-container {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 25px;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 30px;
+  width: 100%;
   max-width: 1000px;
   margin: 0 auto;
 }
 
 .character-card {
+  width: 100%;
+  min-height: 420px;
+  box-sizing: border-box;
   background: white;
   color: #2b2b2b;
   border-radius: 18px;
   padding: 20px;
   text-align: center;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+  cursor: pointer;
 }
 
 .character-card img {
@@ -65,19 +71,23 @@ html {
   object-fit: cover;
   display: block;
   border-radius: 14px;
+  background: #e5e5e5;
 }
   
 .character-card h3 {
+  font-size: 22px;
+  margin: 15px 0;
   color: #781717;
-  font-size: 24px;
 }
 
 .character-card p {
   font-size: 14px;
   margin: 8px 0;
+  line-height: 1.4;
 }
 
 .character-card strong {
+  font-size: 14px;
   color: #781717;
 }
 
@@ -122,4 +132,57 @@ html {
 
 .character-card strong {
   font-size: 14px;
+}
+
+.search-input {
+  width: 100%;
+  max-width: 500px;
+  padding: 14px 20px;
+  margin: 20px auto 35px;
+  display: block;
+  border: 3px solid #781717;
+  border-radius: 999px;
+  font-size: 18px;
+  outline: none;
+}
+
+.filter-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin: 20px 0 35px;
+  flex-wrap: wrap;
+}
+
+.filter-buttons button {
+  border: 2px solid #781717;
+  background: white;
+  color: #781717;
+  padding: 10px 18px;
+  border-radius: 999px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.filter-buttons button:hover {
+  background: #ffd166;
+  transform: translateY(-3px);
+}
+
+.active-filter {
+  background: #781717 !important;
+  color: white !important;
+}
+
+.no-results {
+  color: #781717;
+  background: #fff3cd;
+  border: 2px solid #ffd166;
+  padding: 18px 24px;
+  border-radius: 16px;
+  max-width: 500px;
+  margin: 30px auto;
+  font-size: 22px;
+  font-weight: bold;
 }

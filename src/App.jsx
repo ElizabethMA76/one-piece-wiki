@@ -6,8 +6,30 @@ import CharacterCard from "./components/CharacterCard";
 import CharacterDetail from "./components/CharacterDetail";
 
 function App() {
-
+  // react recuerda la informacion mientras la aplicacion esta funcionando 
   const [selectedCharacter, setSelectedCharacter] = useState(null);
+  const [searchText, setSearchText] = useState("");
+  const [filterType, setFilterType] = useState("all");
+
+  const filteredCharacters = characters.filter((character) => {
+    const matchesSearch = character.name
+      .toLowerCase()
+      .includes(searchText.toLowerCase());
+
+    const hasDevilFruit =
+      character.devilFruit.toLowerCase() !== "none" &&
+      character.devilFruit.toLowerCase() !== "ninguna";
+
+    if (filterType === "with-fruit") {
+      return matchesSearch && hasDevilFruit;
+    }
+
+    if (filterType === "without-fruit") {
+      return matchesSearch && !hasDevilFruit;
+    }
+
+    return matchesSearch;
+  });
   return (
 
     <>
@@ -43,28 +65,69 @@ function App() {
           </h3>
         )}
 
-        <div className="cards-container">
-          {characters.map((character) => (
-            <div
-              key={character.id}
-              onClick={() => setSelectedCharacter(character)}
-            >
-              <CharacterCard
-                character={character}
-                isSelected={selectedCharacter?.id === character.id}
-              />           
-            </div>
-          ))}
+        <input
+          className="search-input"
+          type="text"
+          placeholder="Buscar personaje..."
+          value={searchText}
+          onChange={(event) => setSearchText(event.target.value)}
+        />
+        <div className="filter-buttons">
+          <button
+            className={filterType === "all" ? "active-filter" : ""}
+            onClick={() => setFilterType("all")}
+          >
+            Todos
+          </button>
+
+          <button
+            className={filterType === "with-fruit" ? "active-filter" : ""}
+            onClick={() => setFilterType("with-fruit")}
+          >
+            Con fruta
+          </button>
+
+          <button
+            className={filterType === "without-fruit" ? "active-filter" : ""}
+            onClick={() => setFilterType("without-fruit")}
+          >
+            Sin fruta
+          </button>
         </div>
-          <CharacterDetail
-    character={selectedCharacter}
-          />
+
+        <div className="cards-container">
+          {filteredCharacters.length > 0 ? (
+            <div className="cards-container">
+              {filteredCharacters.map((character) => (
+                <div
+                  key={character.id}
+                  onClick={() => setSelectedCharacter(character)}
+                >
+                  <CharacterCard
+                    character={character}
+                    isSelected={selectedCharacter?.id === character.id}
+                  />
+                </div>
+              ))}
+            </div>
+          ) : (
+            <p className="no-results">
+              No se encontraron personajes.
+            </p>
+          )}
+        </div>
+
+        <CharacterDetail
+          character={selectedCharacter}
+        />
       </section>
 
       <section id="tripulaciones" className="section">Tripulaciones</section>
       <section id="frutas" className="section">Frutas del Diablo</section>
       <section id="arcos" className="section">Arcos</section>
     </>
+
+
   );
 }
 
