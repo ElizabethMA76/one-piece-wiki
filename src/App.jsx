@@ -11,6 +11,16 @@ function App() {
   const [searchText, setSearchText] = useState("");
   const [filterType, setFilterType] = useState("all");
 
+  const handleSearchChange = (value) => {
+    setSearchText(value);
+    setSelectedCharacter(null);
+  };
+
+  const handleFilterChange = (value) => {
+    setFilterType(value);
+    setSelectedCharacter(null);
+  };
+
   const filteredCharacters = characters.filter((character) => {
     const matchesSearch = character.name
       .toLowerCase()
@@ -70,26 +80,26 @@ function App() {
           type="text"
           placeholder="Buscar personaje..."
           value={searchText}
-          onChange={(event) => setSearchText(event.target.value)}
+          onChange={(event) => handleSearchChange(event.target.value)}
         />
         <div className="filter-buttons">
           <button
             className={filterType === "all" ? "active-filter" : ""}
-            onClick={() => setFilterType("all")}
+            onClick={() => handleFilterChange("all")}
           >
             Todos
           </button>
 
           <button
             className={filterType === "with-fruit" ? "active-filter" : ""}
-            onClick={() => setFilterType("with-fruit")}
+            onClick={() => handleFilterChange("with-fruit")}
           >
             Con fruta
           </button>
 
           <button
             className={filterType === "without-fruit" ? "active-filter" : ""}
-            onClick={() => setFilterType("without-fruit")}
+            onClick={() => handleFilterChange("without-fruit")}
           >
             Sin fruta
           </button>
@@ -121,6 +131,8 @@ function App() {
           character={selectedCharacter}
         />
       </section>
+
+
 
       <section id="tripulaciones" className="section">Tripulaciones</section>
       <section id="frutas" className="section">Frutas del Diablo</section>
