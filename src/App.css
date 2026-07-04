@@ -43,13 +43,16 @@ html {
 
 
 .cards-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   gap: 30px;
+
   width: 100%;
   max-width: 1000px;
   margin: 0 auto;
 }
+
 
 .character-card {
   width: 100%;
